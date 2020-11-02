@@ -19,7 +19,7 @@ class Bakery
 
     def ingredients
         #return array of ingreients for the desserts
-        DessertJoiner.all.map {|dj| dj.ingredient}
+        DessertJoiner.all.map {|dj| dj.ingredient.name}
 
     end
 
@@ -30,9 +30,12 @@ class Bakery
 
     def average_calories
         #should return a float totaling the average number of calories for the desserts sold at this bakery
+        array = DessertJoiner.all.map {|dj| dj.ingredient.calories}
+        array.sum
     end
 
     def shopping_list
         #should return a string of names for ingredients for the bakery
+        DessertJoiner.all.map {|dj| dj.ingredient.name}.uniq
     end
 end

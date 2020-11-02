@@ -22,7 +22,8 @@ class Ingredient
 
     def bakeries
         #should return the bakery objects for the bakeries that use that ingredient
-        
+        DessertJoiner.all.select {|dj| dj.ingredient == self}.bakery
+
 
     end
 
@@ -33,5 +34,7 @@ class Ingredient
     #   'chocolate mousse', 'chocolate']
     # - make sure you aren't just looking for exact matches (like 'chocolate' ==
     #   'chocolate')
+        @@all.select {|ing| ing.name.include? ingredient}
+
     end
 end

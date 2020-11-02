@@ -22,8 +22,6 @@ class DessertJoiner
         Dessert.all.select {|dessert| dessert.ingredient == self}
     end
 
-    def calories
-        ingredients.map {|ing| ing.calories}
-    end
+    
 
 end

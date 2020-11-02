@@ -29,15 +29,15 @@ class Dessert
     end
 
     def calories
-        #should return a float totaling all the calories for all the ingredients included in that dessert
-        count = 0
-        DessertJoiner.all.map do |ing| 
-            if ing.dessert == self
-                count += ing.calories
-            end
-        end
-        count
-
+        # #should return a float totaling all the calories for all the ingredients included in that dessert
+        # count = 0
+        # DessertJoiner.all.map do |ing| 
+        #     if ing.dessert == self
+        #         count += ing.calories
+        #     end
+        # end
+        # count
+        DessertJoiner.all.map {|dj| dj.ingredient.calories}.sum
     end
 
 
