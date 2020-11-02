@@ -36,5 +36,9 @@ class Ingredient
     #   'chocolate')
         @@all.select {|ing| ing.name.include? ingredient}
 
+        
+
+
+
     end
 end
